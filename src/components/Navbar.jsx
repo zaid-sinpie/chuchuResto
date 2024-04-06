@@ -1,5 +1,7 @@
-import logo from '../assets/logo.png'
-export default function Navbar({}){
+import logo from '../assets/logo.png';
+
+
+export default function Navbar(){
     return(
         <ul className='navbar'>
             <div className="logo"><img src={logo} alt="" /></div>
