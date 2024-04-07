@@ -6,12 +6,13 @@ export default function Content({}) {
       <h2 className="heading">Today's Special</h2>
       <div className="dish-wrapper">
         <Dish id='dish1'/>
-        <Dish id='dish2'/>
+        <Dish id='dish1'/>
+        <a href="#">MORE <i className="fa-solid fa-chevron-right"></i></a>
       </div>
       <h1 className="main-heading">
-        Ramen,
+        RAMEN,
         <br />
-        That's what you need!
+        that's what you need!
       </h1>
       <p className="content-para">
         Life is hard take a break,

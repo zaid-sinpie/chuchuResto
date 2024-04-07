@@ -6,8 +6,6 @@
 }
 
 body {
-  background: url(./assets/background.jpg) no-repeat;
-  background-size: cover;
   font-family: "Open Sans", sans-serif;
   font-optical-sizing: auto;
   font-weight: 100;
