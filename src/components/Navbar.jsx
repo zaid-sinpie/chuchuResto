@@ -1,23 +1,22 @@
-import logo from '../assets/logo.png';
-import Button from './Button.jsx';
+import { useState } from "react";
+import logo from "../assets/logo.png";
+import Button from "./Button.jsx";
 
+export default function Navbar({onSelect}) {
 
-export default function Navbar(){
-    let btnClicked;
-
-    function isBtnClicked(){
-        if (id === 'login'){
-            btnClicked = id;
-        }
-    }
-
-    return(
-        <ul className='navbar'>
-            <div className="logo"><img src={logo} alt="" /></div>
-            <div className="btns">
-                <Button onSelect={isBtnClicked} id={'login'}>Login</Button>
-                <Button id={'signup'}>Signup</Button>
-            </div>
-        </ul>
-    )
+  return (
+    <ul className="navbar">
+      <div className="logo">
+        <img src={logo} alt="" />
+      </div>
+      <div className="btns">
+        <Button id={"login"} onSelect={onSelect}>
+          Login
+        </Button>
+        <Button  id={"signup"} onSelect={onSelect}>
+          Signup
+        </Button>
+      </div>
+    </ul>
+  );
 }

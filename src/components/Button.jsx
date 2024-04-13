@@ -1,6 +1,6 @@
-export default function Button({children, id}){
-
+export default function Button({children,id,onSelect}){
+     
     return(
-        <button className="btn" id={id}>{children}</button>
+        <button onClick={() => onSelect(id)} className="btn">{children}</button>
     )
 }
