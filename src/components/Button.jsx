@@ -1,5 +1,6 @@
-export default function Button({children}){
+export default function Button({children, id}){
+
     return(
-        <button className="btn">{children}</button>
+        <button className="btn" id={id}>{children}</button>
     )
 }

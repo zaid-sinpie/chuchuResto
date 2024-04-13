@@ -201,6 +201,7 @@ p {
 
 /* modal */
 .popup {
+  position: absolute;
   height: 20rem;
   width: 30rem;
   border-radius: 12px;
@@ -211,6 +212,9 @@ p {
   border: none;
   outline: none;
   gap: 1rem;
+  top: 25%;
+  left: 30%;
+  z-index: 10;
 }
 
 .popup[open] {
@@ -281,6 +285,16 @@ p {
 .popup form button:hover {
   background: rgba(105, 105, 105, 0.6);
   color: var(--text-color);
+}
+
+.overlay{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  filter: blur(10px);
+  backdrop-filter: blur(.5px);
+  z-index: 5;
 }
 
 /* animation */
