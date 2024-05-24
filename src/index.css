@@ -201,24 +201,18 @@ p {
 
 /* modal */
 .popup {
-  position: absolute;
-  height: 20rem;
-  width: 30rem;
-  border-radius: 12px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
   border: none;
-  outline: none;
-  gap: 1rem;
-  top: 25%;
-  left: 30%;
-  z-index: 10;
+  border-radius: 8px;
+  padding: 2rem;
+  margin: auto;
 }
 
 .popup[open] {
   animation: slide-in-from-top 0.35s ease-out;
+}
+
+.popup::backdrop {
+  background: rgba(0, 0, 0, 0.9);
 }
 
 .popup h1 {
@@ -285,6 +279,19 @@ p {
 .popup form button:hover {
   background: rgba(105, 105, 105, 0.6);
   color: var(--text-color);
+}
+
+.popup p strong a{
+  cursor: pointer;
+  color: rgb(152, 152, 255);
+}
+
+.popup p strong a:hover{
+  color: rgb(49, 49, 255);
+}
+
+.popup p{
+  font-size: small;
 }
 
 .overlay{

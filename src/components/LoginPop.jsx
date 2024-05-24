@@ -1,31 +1,42 @@
-export default function LoginPop({btnClicked}) {
-  btnClicked = 'signup';
-  let ptag;
-  if(btnClicked === 'login'){
-    ptag = <p>Are you a new user? <strong><a href="#">Signup</a></strong> here.</p>
+import { useImperativeHandle, useRef, forwardRef, useState } from "react";
+import { createPortal } from "react-dom";
+import LoginForm from "./LoginForm";
+import SignupForm from "./SignupForm";
+
+const LoginPop = forwardRef(function LoginPop({ id }, ref) {
+  const [userState, setUserState] = useState(false);
+  const dialog = useRef();
+
+  useImperativeHandle(ref, () => {
+    return {
+      open() {
+        dialog.current.showModal();
+      },
+    };
+  });
+
+  function toggleUserState(){
+    setUserState(!userState);
   }
-  if (btnClicked === 'signup'){
-    ptag = <p>Already have an account?<strong><a href="#">Login</a></strong> here.</p>
+
+  let user;
+  if (!userState){
+    user = <p>New user? <strong><a onClick={toggleUserState}>create account</a></strong></p>
+  }else{
+    user = <p>Already have an account <strong><a onClick={toggleUserState}>Login</a></strong></p>
   }
-  
-  return (
-    <>
-    <dialog className="popup">
-        <h1>Welcome back! <sup>chu chu</sup> </h1>
-        {ptag}
-      <form action="#" method="">
-        <div>
-          <label htmlFor="username">Username</label>
-          <input type="text" id="username" />
-        </div>
-        <div>
-            <label htmlFor="password">Password</label>
-            <input type="password" id="password"/>
-        </div>
-        <button type="submit">Login</button>
-      </form>
-    </dialog>
-    <div className="overlay"></div>
-    </>
+
+  return createPortal(
+    <dialog ref={dialog} className="popup">
+      <h1>
+        Welcome back! <sup>chu chu</sup>{" "}
+      </h1>
+      {!userState && <LoginForm/>}
+      {userState && <SignupForm/>}
+      {user}
+    </dialog>,
+    document.getElementById("modal")
   );
-}
+});
+
+export default LoginPop;

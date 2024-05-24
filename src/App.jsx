@@ -3,14 +3,22 @@ import Navbar from "./components/Navbar.jsx";
 import Section from "./components/Section.jsx";
 import Content from "./components/Content.jsx";
 import LoginPop from "./components/LoginPop.jsx";
+import { useRef } from "react";
 
 function App() {
+
+  const dialog = useRef();
+
+  function openModal(){
+    dialog.current.open();
+  }
+
   return (
     <>
-      <Navbar />
+      <Navbar openModal={openModal} />
       <Section>
         <Content />
-        {/* <LoginPop/> */}
+        <LoginPop ref={dialog}/>
       </Section>
     </>
   );
