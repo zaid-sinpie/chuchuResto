@@ -16,10 +16,10 @@ function App() {
   return (
     <>
       <Navbar openModal={openModal} />
-      <Section>
+      {<Section>
         <Content />
         <LoginPop ref={dialog}/>
-      </Section>
+      </Section>}
     </>
   );
 }

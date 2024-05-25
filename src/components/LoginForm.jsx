@@ -1,6 +1,7 @@
 import React from "react";
 
-const LoginForm = () => {
+const LoginForm = ({close}) => {
+
   return (
     <form action="#" method="">
       <div>
@@ -12,6 +13,7 @@ const LoginForm = () => {
         <input type="password" id="password" />
       </div>
       <button>LogIn</button>
+      <button type="button" onClick={close}>Cancle</button>
     </form>
   );
 };

@@ -8,8 +8,7 @@ export default function Navbar({openModal}){
         <ul className='navbar'>
             <div className="logo"><img src={logo} alt="" /></div>
             <div className="btns">
-                <Button onClick={openModal} id={'login'}>Login</Button>
-                <Button id={'signup'}>Signup</Button>
+                <Button onClick={openModal} id={'login'}>Get Started</Button>
             </div>
         </ul>
     )

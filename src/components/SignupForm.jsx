@@ -1,6 +1,6 @@
 import React from 'react'
 
-const SignupForm = () => {
+const SignupForm = ({close}) => {
   return (
     <form action="#" method="">
       <div>
@@ -16,6 +16,7 @@ const SignupForm = () => {
         <input type="password" id="confirmPassword" />
       </div>
       <button>SignUp</button>
+      <button type="button" onClick={close}>Cancle</button>
     </form>
   )
 }

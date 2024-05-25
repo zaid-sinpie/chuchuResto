@@ -15,6 +15,10 @@ const LoginPop = forwardRef(function LoginPop({ id }, ref) {
     };
   });
 
+  function CloseModal(){
+    dialog.current.close();
+  }
+
   function toggleUserState(){
     setUserState(!userState);
   }
@@ -23,7 +27,7 @@ const LoginPop = forwardRef(function LoginPop({ id }, ref) {
   if (!userState){
     user = <p>New user? <strong><a onClick={toggleUserState}>create account</a></strong></p>
   }else{
-    user = <p>Already have an account <strong><a onClick={toggleUserState}>Login</a></strong></p>
+    user = <p>Already have an account? <strong><a onClick={toggleUserState}>Login</a></strong></p>
   }
 
   return createPortal(
@@ -31,8 +35,8 @@ const LoginPop = forwardRef(function LoginPop({ id }, ref) {
       <h1>
         Welcome back! <sup>chu chu</sup>{" "}
       </h1>
-      {!userState && <LoginForm/>}
-      {userState && <SignupForm/>}
+      {!userState && <LoginForm close={CloseModal}/>}
+      {userState && <SignupForm close={CloseModal}/>}
       {user}
     </dialog>,
     document.getElementById("modal")
