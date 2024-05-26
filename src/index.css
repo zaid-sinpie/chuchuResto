@@ -125,7 +125,7 @@ body {
 }
 
 .dish-wrapper {
-  width: 60%;
+  width: 65%;
   height: auto;
   display: flex;
   gap: 2rem;
@@ -236,7 +236,7 @@ p {
 .popup form {
   display: flex;
   flex-direction: column;
-  height: auto;
+  width: 100%;
   gap: 1rem;
   justify-content: space-around;
 }
@@ -254,7 +254,7 @@ p {
 }
 
 .popup form div input {
-  padding: 5px 15px;
+  padding: 10px 25px;
   outline: none;
   border: none;
   border-radius: 2px;

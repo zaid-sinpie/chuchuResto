@@ -1,6 +1,5 @@
-import logo from '../assets/logo.png';
-import Button from './Button.jsx';
-
+import logo from "../assets/logo.png";
+import Button from "./Button.jsx";
 
 export default function Navbar({openModal}){
 
