@@ -6,20 +6,21 @@ import LoginPop from "./components/LoginPop.jsx";
 import { useRef } from "react";
 
 function App() {
-
   const dialog = useRef();
 
-  function openModal(){
+  function openModal() {
     dialog.current.open();
   }
 
   return (
     <>
       <Navbar openModal={openModal} />
-      {<Section>
-        <Content />
-        <LoginPop ref={dialog}/>
-      </Section>}
+      {
+        <Section>
+          <Content />
+          <LoginPop ref={dialog} />
+        </Section>
+      }
     </>
   );
 }
