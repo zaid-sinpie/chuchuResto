@@ -20,7 +20,7 @@ const LoginPop = forwardRef(function LoginPop({ id }, ref) {
   }
 
   function toggleUserState(){
-    setUserState(!userState);
+    setUserState((userState)=>!userState);
   }
 
   let user;
